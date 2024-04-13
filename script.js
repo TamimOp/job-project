@@ -5,25 +5,23 @@ fetch("destinations.json")
   .then((data) => {
     destinations = data;
     flatpickr("#Depart", {
-      dateFormat: "d-m-y", // Set the date format
-      minDate: "today", // Set the minimum selectable date to today
+      dateFormat: "d-m-y",
+      minDate: "today",
       onClose: function (selectedDates) {
-        // When the date is selected, close the calendar and update the input field value
         this.close();
       },
     });
     flatpickr("#Return", {
-      dateFormat: "Y-m-d", // Set the date format
-      minDate: "today", // Set the minimum selectable date to today
+      dateFormat: "d-m-y",
+      minDate: "today",
       onClose: function (selectedDates) {
-        // When the date is selected, close the calendar and update the input field value
         this.close();
       },
     });
-    // Attach event listeners after fetching destinations
+
     const fromInput = document.getElementById("From");
     const toInput = document.getElementById("To");
-    // Function to handle input events
+
     function handleInput(event) {
       const inputValue = event.target.value.trim();
       if (inputValue === "") {
@@ -33,7 +31,7 @@ fetch("destinations.json")
         displaySuggestions(event.target, suggestions);
       }
     }
-    // Function to filter destinations based on input value
+
     function filterDestinations(inputValue) {
       return destinations.filter((destination) => {
         const regex = new RegExp(inputValue, "i");
@@ -44,7 +42,7 @@ fetch("destinations.json")
         );
       });
     }
-    // Function to display suggestions
+
     function displaySuggestions(input, suggestions) {
       clearSuggestions(input);
       const suggestionList = document.createElement("ul");
@@ -67,9 +65,9 @@ fetch("destinations.json")
         listItem.textContent = `${suggestion.city}, ${suggestion.country} (${suggestion.code})`;
         listItem.classList.add(
           "cursor-pointer",
-          "hover:bg-gray-100", // Add hover effect
-          "px-4", // Add padding to list items
-          "py-2" // Add padding to list items
+          "hover:bg-gray-100",
+          "px-4",
+          "py-2"
         );
         listItem.addEventListener("click", () => {
           input.value = `${suggestion.city}, ${suggestion.country} (${suggestion.code})`;
@@ -79,14 +77,14 @@ fetch("destinations.json")
       });
       input.parentNode.appendChild(suggestionList);
     }
-    // Function to clear suggestions
+
     function clearSuggestions(input) {
       const suggestionList = input.parentNode.querySelector(".suggestion-list");
       if (suggestionList) {
         suggestionList.remove();
       }
     }
-    // Listen for input events on "From" and "To" input fields
+
     fromInput.addEventListener("input", handleInput);
     toInput.addEventListener("input", handleInput);
   });
@@ -117,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const cabinClassButton = document.getElementById("CabinClass");
   const cabinClassSection = document.querySelector(".class_section");
 
-  // Function to update the cabin class text
   function updateTravellersAndCabinClass() {
     const selectedOption = document.getElementById("subject").value;
     cabinClassButton.querySelector("span").textContent = `${
@@ -125,7 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } Travellers, ${selectedOption}`;
   }
 
-  // Function to toggle the visibility of the cabin class section
   function toggleCabinClassSection() {
     if (cabinClassSection.style.display === "none") {
       cabinClassSection.style.display = "block";
@@ -134,10 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Event listener to handle the click event on the cabin class button
   cabinClassButton.addEventListener("click", toggleCabinClassSection);
 
-  // Event listeners for incrementing and decrementing adult count
   adultsPlusButtons.forEach((button) => {
     button.addEventListener("click", function () {
       adultCounter++;
@@ -156,7 +150,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Event listeners for incrementing and decrementing child count
   childrenPlusButtons.forEach((button) => {
     button.addEventListener("click", function () {
       childCounter++;

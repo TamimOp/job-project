@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add this to your CSS file */
 .class_section {
   display: none;
 }

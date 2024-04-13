@@ -10,12 +10,15 @@
     />
     <link href="./src/output.css" rel="stylesheet" />
   </head>
-  <body>
-    <div class="flex md:w-full md:mx-auto px-4 py-10 bg-dark-blue">
+  <body class="bg-dark-blue">
+    <div class="flex-col md:w-full md:mx-auto px-4 py-10">
       <div class="md:container md:mx-auto">
-        <h1 class="text-3xl font-bold text-white">
-          Millions of cheap flights. One simple search.
-        </h1>
+        <div>
+          <h1 class="text-3xl font-bold text-white">
+            Millions of cheap flights. One simple search.
+          </h1>
+        </div>
+
         <div class="flex space-x-1 flex-row my-10">
           <div class="basis-1/5 md:basis-1/3 bg-white rounded-md">
             <div class="px-3 pt-3">
@@ -123,7 +126,9 @@
         </div>
       </div>
     </div>
-    <!-- cabin class section  -->
+
+    <!-- cabin class hidden section  -->
+
     <div class="md:container md:mx-auto flex">
       <div
         class="class_section bg-slate-50 rounded-lg size-2/5 px-5 py-5 shadow-lg ml-auto -mt-16"
