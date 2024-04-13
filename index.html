@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dummy Search Widget</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="md:w-full md:mx-auto px-4 py-10 bg-dark-blue">
+      <div class="md:container md:mx-auto">
+        <h1 class="text-3xl font-bold text-white">
+          Millions of cheap flights. One simple search.
+        </h1>
+        <div class="flex space-x-1 flex-row my-10">
+          <div class="basis-1/5 md:basis-1/3 bg-white rounded-md">
+            <div class="px-3 pt-3">
+              <span> From </span>
+            </div>
+            <input
+              type="search"
+              name="From"
+              placeholder="Country,city or airport"
+              id="From"
+              class="rounded flex-1 py-2 px-3 focus:outline-none"
+            />
+          </div>
+          <div class="self-center flex">
+            <button
+              id="swapButton"
+              class="size-8 rounded-full bg-white border-dark-blue self-center px-2"
+            >
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#000000"
+                  width="1rem"
+                  height="1rem"
+                  version="1.1"
+                  id="Layer_1"
+                  viewBox="0 0 512.003 512.003"
+                  aria-hidden="true"
+                >
+                  <g>
+                    <g>
+                      <path
+                        d="M440.448,87.831H114.629l52.495-52.495c8.084-8.084,8.084-21.19,0-29.274c-8.083-8.084-21.19-8.084-29.274,0 L20.126,123.788c-8.084,8.084-8.084,21.19,0,29.274L137.85,270.786c4.041,4.042,9.338,6.062,14.636,6.062 c5.298,0,10.596-2.02,14.636-6.064c8.084-8.084,8.084-21.19,0-29.274l-52.495-52.495h325.82c27.896,0,50.592-22.695,50.592-50.592 C491.04,110.528,468.345,87.831,440.448,87.831z"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path
+                        d="M491.877,358.942L374.154,241.218c-8.083-8.084-21.19-8.084-29.274,0c-8.084,8.084-8.084,21.19,0,29.274l52.495,52.495 H71.556c-27.896,0-50.592,22.695-50.592,50.592s22.695,50.593,50.592,50.593h325.819l-52.495,52.495 c-8.084,8.084-8.084,21.19,0,29.274c4.042,4.042,9.34,6.064,14.636,6.064c5.296,0,10.596-2.02,14.636-6.064l117.724-117.724 C499.961,380.132,499.961,367.026,491.877,358.942z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div class="basis-1/5 md:basis-1/3 bg-white rounded-md">
+            <div class="px-3 pt-3">
+              <span>To </span>
+            </div>
+            <input
+              type="search"
+              name="To"
+              placeholder="Country,city or airport"
+              id="To"
+              class="rounded flex-1 py-2 px-3 focus:outline-none"
+            />
+          </div>
+          <div class="basis-1/5 md:basis-1/3 bg-white rounded-md">
+            <div class="px-3 pt-3">
+              <span> Depart </span>
+            </div>
+            <input
+              type="search"
+              name="Depart"
+              placeholder="Add date"
+              id="Depart"
+              class="rounded flex-1 py-2 px-3 focus:outline-none"
+            />
+          </div>
+          <div class="basis-1/5 md:basis-1/3 bg-white rounded-md">
+            <div class="px-3 pt-3">
+              <span> Return </span>
+            </div>
+            <input
+              type="search"
+              name="Return"
+              id="Return"
+              placeholder="Add date"
+              class="rounded flex-1 py-2 px-3 focus:outline-none"
+            />
+          </div>
+
+          <div class="basis-1/5 md:basis-1/3 bg-white rounded-md">
+            <div class="px-3 pt-3">
+              <span>Travellers and cabin class</span>
+            </div>
+            <button
+              type="search"
+              name="Travellers and cabin class"
+              placeholder="1 Adult,Economy"
+              id="CabinClass"
+              class="rounded flex-1 py-2 px-3 focus:outline-none"
+            >
+              <span class="opacity-40">1 Adult,Economy</span>
+            </button>
+          </div>
+
+          <button class="rounded-lg bg-blue-500 text-white px-4">Search</button>
+
+          <span class="m-1 inline-flex cursor-pointer items-center rounded-md">
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- cabin class section  -->
+    <div class="md:container md:mx-auto flex">
+      <div
+        class="class_section bg-slate-50 rounded-lg size-2/5 px-5 py-5 shadow-lg ml-auto -mt-16"
+      >
+        <div class="mb-4">
+          <h1>Cabin Class</h1>
+          <!-- dropdown economy -->
+          <form
+            name="form1"
+            id="form1"
+            action="/action_page.php"
+            class="border-solid border-2 border-black border-opacity-15 rounded-lg py-3"
+          >
+            <select name="subject" id="subject">
+              <option value="First Class" selected="selected">
+                First Class
+              </option>
+              <option value="Business Class" selected="selected">
+                Business Class
+              </option>
+              <option value="Premium Economy" selected="selected">
+                Premium Economy
+              </option>
+              <option value="Economy" selected="selected">Economy</option>
+            </select>
+          </form>
+          <!-- dropdown economy -->
+        </div>
+        <div class="flex flex-row mb-4">
+          <div class="basis-3/4">
+            <h2>Adults</h2>
+            <span class="opacity-60">Aged 16+</span>
+          </div>
+          <div class="basis-1/4">
+            <button class="adult-minus bg-slate-300 size-8 rounded-lg mr-2">
+              -
+            </button>
+            <span class="adult-count">0</span>
+            <button class="adult-plus bg-slate-300 size-8 rounded-lg ml-2">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-row mb-4">
+          <div class="basis-3/4">
+            <h2>Children</h2>
+            <span class="opacity-60">Age 0-15</span>
+          </div>
+          <div class="basis-1/4">
+            <button class="child-minus bg-slate-300 size-8 rounded-lg mr-2">
+              -
+            </button>
+            <span class="child-count">0</span>
+            <button class="child-plus bg-slate-300 size-8 rounded-lg ml-2">
+              +
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <p>
+            Your age at time of travel must be valid for the age category
+            booked. Airlines have restrictions on under 18s travelling alone.
+            <br />
+            <br />
+
+            Age limits and policies for travelling with children may vary so
+            please check with the airline before booking.
+          </p>
+        </div>
+        <button class="rounded-lg bg-blue-500 text-white px-4 py-2">
+          Apply
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
